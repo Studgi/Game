@@ -4,14 +4,13 @@ import game.engine.titans.TitanRegistry;
 import game.engine.weapons.WeaponRegistry;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 
 public class DataLoader {
-    private static final File TITANS_FILE_NAME = new File("." + File.pathSeparator + "titans.csv");
-    private static final File WEAPONS_FILE_NAME = new File("." + File.pathSeparator + "weapons.csv");
+    private static final String TITANS_FILE_NAME = "titans.csv";
+    private static final String WEAPONS_FILE_NAME = "weapons.csv";
 
     public static HashMap<Integer, TitanRegistry> readTitanRegistry() throws IOException {
         HashMap<Integer,TitanRegistry> TitansMap = new HashMap<>();

@@ -43,6 +43,14 @@ public class Battle {
         initializeLanes(initialNumOfLanes);
     }
 
+    public static int[][] getPhasesApproachingTitans() {
+        return Battle.PHASES_APPROACHING_TITANS;
+    }
+
+    public static int getWallBaseHealth() {
+        return Battle.WALL_BASE_HEALTH;
+    }
+
     public int getNumberOfTurns() {
         return numberOfTurns;
     }
@@ -96,5 +104,25 @@ public class Battle {
             this.lanes.add(l);
             this.originalLanes.add(l);
         }
+    }
+
+    public WeaponFactory getWeaponFactory() {
+        return this.weaponFactory;
+    }
+
+    public HashMap<Integer, TitanRegistry> getTitansArchives() {
+        return this.titansArchives;
+    }
+
+    public ArrayList<Titan> getApproachingTitans() {
+        return this.approachingTitans;
+    }
+
+    public PriorityQueue<Lane> getLanes() {
+        return this.lanes;
+    }
+
+    public ArrayList<Lane> getOriginalLanes() {
+        return this.originalLanes;
     }
 }
