@@ -34,6 +34,7 @@ public class Battle {
 
     public Battle(int numberOfTurns, int score, int titanSpawnDistance, int initialNumOfLanes, int initialResourcesPerLane) throws IOException {
         this.numberOfTurns = numberOfTurns;
+        this.numberOfTitansPerTurn =
         this.score = score;
         this.titanSpawnDistance = titanSpawnDistance;
         this.resourcesGathered = initialResourcesPerLane * initialNumOfLanes;
