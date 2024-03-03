@@ -63,8 +63,6 @@ public abstract class Titan implements Attackee, Attacker, Mobil, Comparable<Tit
         return this.dangerLevel;
     }
 
-    public abstract int getTitanCode();
-
     @Override
     public int compareTo(Titan o){
         return this.distanceFromBase - o.distanceFromBase;

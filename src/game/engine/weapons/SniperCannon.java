@@ -12,9 +12,4 @@ public class SniperCannon extends Weapon {
         this.minRange = minRange;
         this.maxRange = maxRange;
     }
-
-    @Override
-    int getWeaponCode() {
-        return WEAPON_CODE;
-    }
 }

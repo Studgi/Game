@@ -14,6 +14,4 @@ abstract public class Weapon implements Attacker {
     public int getDamage() {
         return this.baseDamage;
     }
-
-    abstract int getWeaponCode();
 }

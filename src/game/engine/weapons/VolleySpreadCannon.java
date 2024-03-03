@@ -7,9 +7,4 @@ public class VolleySpreadCannon extends Weapon {
     public VolleySpreadCannon(int baseDamage) {
         super(baseDamage);
     }
-
-    @Override
-    int getWeaponCode() {
-        return WEAPON_CODE;
-    }
 }

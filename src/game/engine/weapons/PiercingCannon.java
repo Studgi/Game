@@ -7,9 +7,4 @@ public class PiercingCannon extends Weapon {
     public PiercingCannon(int baseDamage) {
         super(baseDamage);
     }
-
-    @Override
-    int getWeaponCode() {
-        return WEAPON_CODE;
-    }
 }

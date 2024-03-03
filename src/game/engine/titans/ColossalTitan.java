@@ -8,8 +8,4 @@ public class ColossalTitan extends Titan {
         super(baseHealth, baseDamage, heightInMeters, distanceFromBase, speed, resourcesValue, dangerLevel);
 
     }
-
-    public int getTitanCode() {
-        return TITAN_CODE;
-    }
 }

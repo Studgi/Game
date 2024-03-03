@@ -7,9 +7,4 @@ public class WallTrap extends Weapon {
     public WallTrap(int baseDamage) {
         super(baseDamage);
     }
-
-    @Override
-    int getWeaponCode() {
-        return WEAPON_CODE;
-    }
 }
