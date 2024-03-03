@@ -39,7 +39,6 @@ public class Battle {
         this.titanSpawnDistance = titanSpawnDistance;
         this.resourcesGathered = initialResourcesPerLane * initialNumOfLanes;
         this.titansArchives = DataLoader.readTitanRegistry();
-        // TODO; Initially equal to the value of initial resources per lane * initial number of lanes.
         initializeLanes(initialNumOfLanes);
     }
 
