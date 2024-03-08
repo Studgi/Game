@@ -26,6 +26,7 @@ public class DataLoader {
             TitansMap.put(TitansInt[0],titanRegistry);
             line = br.readLine();
         }
+        br.close();
         return TitansMap;
     }
 
@@ -52,6 +53,15 @@ public class DataLoader {
             WeaponsMap.put(WeaponsInt[0],weaponRegistry);
             line = br.readLine();
         }
+        br.close();
         return WeaponsMap;
+    }
+
+    public static String getTitansFileName() {
+        return DataLoader.TITANS_FILE_NAME;
+    }
+
+    public static String getWeaponsFileName() {
+        return DataLoader.WEAPONS_FILE_NAME;
     }
 }

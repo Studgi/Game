@@ -20,24 +20,24 @@ public class Lane implements Comparable<Lane> {
         this.weapons = new ArrayList<>();
     }
 
+    public Wall getLaneWall(){
+        return this.laneWall;
+    }
+
     public int getDangerLevel() {
         return dangerLevel;
     }
 
     public void setDangerLevel(int dangerLevel){
-        this.dangerLevel = dangerLevel;
-    }
-
-    public ArrayList<Weapon> getWeapons(){
-        return this.weapons;
-    }
-
-    public Wall getLaneWall(){
-        return this.laneWall;
+        this.dangerLevel = Math.max(dangerLevel, 0);
     }
 
     public PriorityQueue<Titan> getTitans(){
         return this.titans;
+    }
+
+    public ArrayList<Weapon> getWeapons(){
+        return this.weapons;
     }
 
     @Override

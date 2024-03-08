@@ -22,23 +22,28 @@ public class Battle {
 
     private int numberOfTurns;
     private int resourcesGathered;
-    private BattlePhase battlePhase = BattlePhase.EARLY;
-    private int numberOfTitansPerTurn = 1;
+    private BattlePhase battlePhase;
+    private int numberOfTitansPerTurn;
     private int score;
     private int titanSpawnDistance;
-    private final WeaponFactory weaponFactory = new WeaponFactory();
+    private final WeaponFactory weaponFactory;
     private final HashMap<Integer, TitanRegistry> titansArchives;
-    private final ArrayList<Titan> approachingTitans = new ArrayList<>();
-    private final PriorityQueue<Lane> lanes = new PriorityQueue<>();
-    private final ArrayList<Lane> originalLanes = new ArrayList<>();
+    private final ArrayList<Titan> approachingTitans;
+    private final PriorityQueue<Lane> lanes;
+    private final ArrayList<Lane> originalLanes;
 
     public Battle(int numberOfTurns, int score, int titanSpawnDistance, int initialNumOfLanes, int initialResourcesPerLane) throws IOException {
         this.numberOfTurns = numberOfTurns;
-        this.numberOfTitansPerTurn =
+        this.resourcesGathered = initialResourcesPerLane * initialNumOfLanes;
+        this.battlePhase = BattlePhase.EARLY;
+        this.numberOfTitansPerTurn = 1;
         this.score = score;
         this.titanSpawnDistance = titanSpawnDistance;
-        this.resourcesGathered = initialResourcesPerLane * initialNumOfLanes;
+        this.weaponFactory = new WeaponFactory();
         this.titansArchives = DataLoader.readTitanRegistry();
+        this.approachingTitans = new ArrayList<>();
+        this.lanes = new PriorityQueue<>();
+        this.originalLanes = new ArrayList<>();
         initializeLanes(initialNumOfLanes);
     }
 
@@ -51,7 +56,7 @@ public class Battle {
     }
 
     public int getNumberOfTurns() {
-        return numberOfTurns;
+        return this.numberOfTurns;
     }
 
     public void setNumberOfTurns(int numberOfTurns) {
@@ -59,7 +64,7 @@ public class Battle {
     }
 
     public int getResourcesGathered() {
-        return resourcesGathered;
+        return this.resourcesGathered;
     }
 
     public void setResourcesGathered(int resourcesGathered) {
@@ -67,7 +72,7 @@ public class Battle {
     }
 
     public BattlePhase getBattlePhase() {
-        return battlePhase;
+        return this.battlePhase;
     }
 
     public void setBattlePhase(BattlePhase battlePhase) {
@@ -75,7 +80,7 @@ public class Battle {
     }
 
     public int getNumberOfTitansPerTurn() {
-        return numberOfTitansPerTurn;
+        return this.numberOfTitansPerTurn;
     }
 
     public void setNumberOfTitansPerTurn(int numberOfTitansPerTurn) {
@@ -83,7 +88,7 @@ public class Battle {
     }
 
     public int getScore() {
-        return score;
+        return this.score;
     }
 
     public void setScore(int score) {
@@ -95,7 +100,7 @@ public class Battle {
     }
 
     public void setTitanSpawnDistance(int titanSpawnDistance) {
-        this.titanSpawnDistance = titanSpawnDistance;
+        this.titanSpawnDistance = Math.max(titanSpawnDistance, 0);
     }
     private void initializeLanes(int numOfLanes){
         for (int i = 0; i < numOfLanes; i++) {
